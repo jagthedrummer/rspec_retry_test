@@ -29,6 +29,7 @@ RSpec.describe HomeController, type: :controller do
     it "returns a success response" do
       get :index, params: {}, session: {}
       expect(response).to be_successful
+      expect(assigns[:message]).to eq(1)
     end
   end
 
