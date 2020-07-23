@@ -21,6 +21,13 @@ RSpec.configure do |config|
   config.verbose_retry = false
   # show exception that triggers a retry if verbose_retry is set to true
   config.display_try_failure_messages = false
+  config.retry_callback = proc do |ex|
+    if @controller
+      @controller.view_assigns.keys.each do |key|
+        @controller.remove_instance_variable("@#{key}".to_sym)
+      end
+    end
+  end
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
