@@ -18,9 +18,9 @@ require 'rspec/retry'
 
 RSpec.configure do |config|
   # show retry status in spec process
-  config.verbose_retry = true
+  config.verbose_retry = false
   # show exception that triggers a retry if verbose_retry is set to true
-  config.display_try_failure_messages = true
+  config.display_try_failure_messages = false
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
