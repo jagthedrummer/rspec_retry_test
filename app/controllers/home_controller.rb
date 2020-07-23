@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
+  include RandomGen
+  before_action :set_random
   def index
-    @message ||= rand(3)
   end
 end
